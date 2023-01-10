@@ -47,7 +47,7 @@ const Forecast = ({ data }: Props): JSX.Element => {
               <img
                 className=""
                 alt={`weather-icon-${item.weather[0].description}`}
-                src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
               />
               <p className="text-sm font-bold">
                 <Degree temp={Math.round(item.main.temp)} />
