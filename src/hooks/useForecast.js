@@ -17,7 +17,7 @@ var useForecast = function () {
     var _d = useState(null), forecast = _d[0], setForecast = _d[1];
     var _e = useState(""), error = _e[0], setError = _e[1];
     var getSearchOptions = function (value) {
-        fetch("http://api.openweathermap.org/geo/1.0/direct?q=".concat(value.trim(), "&limit=8&appid=").concat(import.meta.env.VITE_REACT_APP_API_KEY))
+        fetch("https://api.openweathermap.org/geo/1.0/direct?q=".concat(value.trim(), "&limit=8&appid=").concat(import.meta.env.VITE_REACT_APP_API_KEY))
             .then(function (res) { return res.json(); })
             .then(function (data) { return setOptions(data); })
             .catch(function (error) { return setError(error.message); });
