@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { forecastType } from "../types";
 type Props = {
     data: forecastType;
