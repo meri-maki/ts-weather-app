@@ -48,7 +48,7 @@ const Forecast = ({ data }: Props): JSX.Element => {
             <Degree temp={Math.floor(today.main.temp_min)} />
           </p>
         </section>
-        <section className="flex overflow-x-scroll mt-4 pb-2 mb-5">
+        <section className="flex overflow-x-scroll mt-4 pb-2 mb-5 scrollbar-thin scrollbar-track-white scrollbar-thumb-zinc-700">
           {data.list.map((item, i) => (
             <div
               className="inline-block text-center w-[50px] flex-shrink-0"
