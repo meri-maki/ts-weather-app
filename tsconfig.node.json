@@ -17,6 +17,6 @@
     "jsx": "react-jsx",
     "composite": true
   },
-  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/*.tsx", "src/*.ts"],
   "exclude": ["node_modules"]
 }

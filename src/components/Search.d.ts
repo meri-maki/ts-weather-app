@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 import { optionType } from "../types";
-type Props = {
+declare type Props = {
     term: string;
     options: [];
     onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;

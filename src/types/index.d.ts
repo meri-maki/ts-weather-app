@@ -1,10 +1,10 @@
-export type optionType = {
+export declare type optionType = {
     name: string;
     lat: number;
     lon: number;
     country: string;
 };
-export type forecastType = {
+export declare type forecastType = {
     name: string;
     country: string;
     list: [

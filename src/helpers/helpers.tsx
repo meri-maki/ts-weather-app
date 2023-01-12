@@ -20,13 +20,19 @@ export const getHumidityValue = (level: number): string => {
   return "Lots of moisture, uncomfortable air"
 }
 
-export const getVisibilityValue = (number: number): string => {
+export const getVisibilityDescription = (number: number): string => {
   if (number <= 50) return "Dangerously foggy"
   if (number > 50 && number <= 500) return "Expect heavy fog"
   if (number > 500 && number <= 2000) return "Expect some fog"
   if (number > 2000 && number <= 9000) return "Expect some haze"
 
   return "Very clear day"
+}
+
+export const getVisibilityValue = (value: number): string => {
+  if (value < 1000) return `${value} m`
+  if (value >= 1000) return `${value / 1000} km`
+  else return "No data"
 }
 
 export const getTime = (timestamp: number): string => {
@@ -54,4 +60,28 @@ export const getPop = (value: number): string => {
   if (value > 0.33 && value <= 0.66) return "Moderate probability"
 
   return "High probability"
+}
+
+export const getPressure = (value: number): string =>
+  `${Math.round(value * 0.75006156)} mm Hg`
+
+export const getPressureDescription = (value: number): string => {
+  if (value === 1013) {
+    return "Normal atmospheric pressure"
+  }
+  if (value > 1013 && value < 1025) {
+    return "Slightly high atmospheric pressure"
+  }
+
+  if (value >= 1025) {
+    return "High atmospheric pressure"
+  }
+  if (value < 1013 && value > 1000) {
+    return "Slightly low atmospheric pressure"
+  }
+  if (value <= 1000) {
+    return "Low atmospheric pressure"
+  } else {
+    return "No atmospheric pressure description"
+  }
 }

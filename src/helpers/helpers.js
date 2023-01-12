@@ -22,7 +22,7 @@ export var getHumidityValue = function (level) {
         return "A bit uncomfortable, sticky feeling";
     return "Lots of moisture, uncomfortable air";
 };
-export var getVisibilityValue = function (number) {
+export var getVisibilityDescription = function (number) {
     if (number <= 50)
         return "Dangerously foggy";
     if (number > 50 && number <= 500)
@@ -32,6 +32,14 @@ export var getVisibilityValue = function (number) {
     if (number > 2000 && number <= 9000)
         return "Expect some haze";
     return "Very clear day";
+};
+export var getVisibilityValue = function (value) {
+    if (value < 1000)
+        return "".concat(value, " m");
+    if (value >= 1000)
+        return "".concat(value / 1000, " km");
+    else
+        return "No data";
 };
 export var getTime = function (timestamp) {
     var date = new Date(timestamp * 1000);
@@ -56,4 +64,27 @@ export var getPop = function (value) {
     if (value > 0.33 && value <= 0.66)
         return "Moderate probability";
     return "High probability";
+};
+export var getPressure = function (value) {
+    return "".concat(Math.round(value * 0.75006156), " mm Hg");
+};
+export var getPressureDescription = function (value) {
+    if (value === 1013) {
+        return "Normal atmospheric pressure";
+    }
+    if (value > 1013 && value < 1025) {
+        return "Slightly high atmospheric pressure";
+    }
+    if (value >= 1025) {
+        return "High atmospheric pressure";
+    }
+    if (value < 1013 && value > 1000) {
+        return "Slightly low atmospheric pressure";
+    }
+    if (value <= 1000) {
+        return "Low atmospheric pressure";
+    }
+    else {
+        return "No atmospheric pressure description";
+    }
 };
