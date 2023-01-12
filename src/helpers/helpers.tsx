@@ -67,21 +67,21 @@ export const getPressure = (value: number): string =>
 
 export const getPressureDescription = (value: number): string => {
   if (value === 1013) {
-    return "Normal atmospheric pressure"
+    return "Normal"
   }
   if (value > 1013 && value < 1025) {
-    return "Slightly high atmospheric pressure"
+    return "Slightly higher than standard"
   }
 
   if (value >= 1025) {
-    return "High atmospheric pressure"
+    return "Higher than standard"
   }
   if (value < 1013 && value > 1000) {
-    return "Slightly low atmospheric pressure"
+    return "Slightly lower than standard"
   }
   if (value <= 1000) {
-    return "Low atmospheric pressure"
+    return "Lower than standard"
   } else {
-    return "No atmospheric pressure description"
+    return "No description"
   }
 }

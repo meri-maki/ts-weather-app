@@ -110,9 +110,11 @@ const Forecast = ({ data }: Props): JSX.Element => {
           />
           <Tile
             icon="pop"
-            title="Pop"
+            title="Precipitation"
             info={`${Math.round(today.pop)}%`}
-            description={getPop(Math.round(today.pop))}
+            description={`${getPop(Math.round(today.pop))}, clouds at ${
+              today.clouds.all
+            }%`}
           />
           <Tile
             icon="visibility"

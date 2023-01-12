@@ -1,5 +1,5 @@
 /// <reference types="react" />
-declare type Props = {
+type Props = {
     icon: "wind" | "feels" | "humidity" | "pop" | "visibility" | "pressure";
     title: string;
     info: string | JSX.Element;
